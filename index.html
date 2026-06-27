@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FakeBook</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- TOP NAVIGATION -->
+<nav class="topnav" id="topnav">
+  <div class="topnav__left">
+    <div class="topnav__logo" aria-label="FakeBook">
+      <svg viewBox="0 0 36 36" fill="white" height="36" width="36"><path d="M20.181 35.87C29.094 34.791 36 27.202 36 18c0-9.941-8.059-18-18-18S0 8.059 0 18c0 8.442 5.811 15.526 13.652 17.471L14 34h5.5l.681 1.87z"/><path fill="#1877f2" d="M13.651 35.471v-11.97H9.936V18h3.715v-3.37c0-3.679 2.195-5.704 5.509-5.704 1.593 0 3.254.285 3.254.285v3.648h-1.833c-1.806 0-2.367 1.12-2.367 2.27V18h4.048l-.646 5.5h-3.402v11.971a18.098 18.098 0 01-4.563-.001z"/></svg>
+    </div>
+    <div class="topnav__search">
+      <svg viewBox="0 0 20 20" fill="#65676b" width="16" height="16"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg>
+      <input type="text" placeholder="חפש ב-FakeBook" aria-label="חפש" />
+    </div>
+  </div>
+  <div class="topnav__center">
+    <button class="topnav__tab topnav__tab--active" aria-label="עמוד הבית">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2.1L1 12h3v9h6v-5h4v5h6v-9h3L12 2.1z"/></svg>
+    </button>
+    <button class="topnav__tab" aria-label="חברים">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+    </button>
+    <button class="topnav__tab" aria-label="וידאו">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"/></svg>
+    </button>
+    <button class="topnav__tab" aria-label="שוק">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+    </button>
+  </div>
+  <div class="topnav__right">
+    <button class="topnav__icon-btn demo-toggle-btn" id="demoToggle" title="מצב הדגמה">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+    </button>
+    <button class="topnav__icon-btn" aria-label="מסנג'ר">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.914 1.408 5.526 3.624 7.265v3.492l3.309-1.821C9.863 20.388 10.918 20.5 12 20.5c5.523 0 10-4.145 10-9.257C22 6.145 17.523 2 12 2z"/></svg>
+    </button>
+    <button class="topnav__icon-btn" aria-label="התראות">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+    </button>
+    <div class="topnav__avatar" aria-label="פרופיל">
+      <img src="https://i.pravatar.cc/32?img=11" alt="פרופיל" width="32" height="32" />
+    </div>
+    <button class="topnav__hamburger" id="mobileMenuBtn" aria-label="תפריט">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu__item"><svg viewBox="0 0 24 24" width="24" height="24" fill="#1877f2"><path d="M12 2.1L1 12h3v9h6v-5h4v5h6v-9h3L12 2.1z"/></svg> עמוד הבית</div>
+  <div class="mobile-menu__item"><svg viewBox="0 0 24 24" width="24" height="24" fill="#1877f2"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg> חברים</div>
+  <div class="mobile-menu__item"><svg viewBox="0 0 24 24" width="24" height="24" fill="#1877f2"><path d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"/></svg> וידאו</div>
+  <div class="mobile-menu__item" onclick="window.location.href='/admin'"><svg viewBox="0 0 24 24" width="24" height="24" fill="#1877f2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> פאנל ניהול</div>
+</div>
+
+<!-- DEMO MODE BANNER -->
+<div class="demo-banner" id="demoBanner" style="display:none">
+  🎬 מצב הדגמה פעיל — המערכת מדמה פעילות משתמשים בזמן אמת
+  <button onclick="toggleDemo()" style="margin-right:12px;background:white;color:#1877f2;border:none;padding:4px 12px;border-radius:4px;cursor:pointer;font-weight:600">כבה</button>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="layout" id="mainLayout">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar sidebar--left" id="leftSidebar">
+    <div class="sidebar__profile">
+      <img src="https://i.pravatar.cc/40?img=11" alt="פרופיל" class="sidebar__avatar" />
+      <span class="sidebar__name">ישראל ישראלי</span>
+    </div>
+    <nav class="sidebar__nav">
+      <a href="#" class="sidebar__link sidebar__link--active">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="#1877f2"><path d="M12 2.1L1 12h3v9h6v-5h4v5h6v-9h3L12 2.1z"/></svg>
+        <span>עמוד הבית</span>
+      </a>
+      <a href="#" class="sidebar__link">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="#65676b"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        <span>פרופיל</span>
+      </a>
+      <a href="#" class="sidebar__link">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="#65676b"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        <span>חברים</span>
+      </a>
+      <a href="#" class="sidebar__link">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="#65676b"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 12z"/></svg>
+        <span>שוק</span>
+      </a>
+      <a href="#" class="sidebar__link">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="#65676b"><path d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"/></svg>
+        <span>וידאו</span>
+      </a>
+      <a href="#" class="sidebar__link">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="#65676b"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+        <span>מיוחד</span>
+      </a>
+      <a href="#" class="sidebar__link">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="#65676b"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <span>אירועים</span>
+      </a>
+    </nav>
+    <div class="sidebar__section-title">קיצורי דרך</div>
+    <a href="#" class="sidebar__shortcut">
+      <img src="https://picsum.photos/32/32?random=101" alt="" />
+      <span>קבוצת טכנולוגיה ישראלית</span>
+    </a>
+    <a href="#" class="sidebar__shortcut">
+      <img src="https://picsum.photos/32/32?random=102" alt="" />
+      <span>הייטק IL</span>
+    </a>
+    <a href="#" class="sidebar__shortcut">
+      <img src="https://picsum.photos/32/32?random=103" alt="" />
+      <span>סטארטאפ נשיון</span>
+    </a>
+  </aside>
+
+  <!-- MAIN FEED -->
+  <main class="feed" id="feed">
+    <!-- Story bar -->
+    <div class="stories">
+      <div class="story story--create">
+        <div class="story__bg"><img src="https://i.pravatar.cc/120?img=11" alt="" /></div>
+        <div class="story__add">+</div>
+        <div class="story__label">צור סיפור</div>
+      </div>
+      <div class="story"><div class="story__bg"><img src="https://picsum.photos/120/200?random=201" alt="" /></div><div class="story__avatar"><img src="https://i.pravatar.cc/32?img=1" alt="" /></div><div class="story__label">דוד כהן</div></div>
+      <div class="story"><div class="story__bg"><img src="https://picsum.photos/120/200?random=202" alt="" /></div><div class="story__avatar"><img src="https://i.pravatar.cc/32?img=2" alt="" /></div><div class="story__label">שרה לוי</div></div>
+      <div class="story"><div class="story__bg"><img src="https://picsum.photos/120/200?random=203" alt="" /></div><div class="story__avatar"><img src="https://i.pravatar.cc/32?img=3" alt="" /></div><div class="story__label">מיכאל ברק</div></div>
+      <div class="story"><div class="story__bg"><img src="https://picsum.photos/120/200?random=204" alt="" /></div><div class="story__avatar"><img src="https://i.pravatar.cc/32?img=4" alt="" /></div><div class="story__label">נועה שמיר</div></div>
+    </div>
+
+    <!-- Create post -->
+    <div class="create-post card">
+      <div class="create-post__top">
+        <img src="https://i.pravatar.cc/40?img=11" alt="פרופיל" class="avatar" />
+        <button class="create-post__input" aria-label="מה חשוב לך?">מה חשוב לך?</button>
+      </div>
+      <div class="create-post__actions">
+        <button class="create-post__action">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="#f3425f"><path d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"/></svg>
+          סרטון חי
+        </button>
+        <button class="create-post__action">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="#45bd62"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+          תמונה / וידאו
+        </button>
+        <button class="create-post__action">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="#f7b928"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="white" stroke-width="2" fill="none"/></svg>
+          תחושה / פעילות
+        </button>
+      </div>
+    </div>
+
+    <!-- Posts container -->
+    <div id="postsContainer"></div>
+
+    <!-- Loading indicator -->
+    <div class="feed-loader" id="feedLoader">
+      <div class="skeleton-post card">
+        <div class="skeleton-header">
+          <div class="skeleton-avatar"></div>
+          <div class="skeleton-lines">
+            <div class="skeleton-line skeleton-line--md"></div>
+            <div class="skeleton-line skeleton-line--sm"></div>
+          </div>
+        </div>
+        <div class="skeleton-line skeleton-line--full"></div>
+        <div class="skeleton-line skeleton-line--lg"></div>
+        <div class="skeleton-image"></div>
+      </div>
+    </div>
+
+    <div class="feed-end" id="feedEnd" style="display:none">
+      <p>אין עוד פוסטים</p>
+    </div>
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar sidebar--right" id="rightSidebar">
+    <div class="widget">
+      <div class="widget__title">אנשים שאולי תכיר</div>
+      <div class="widget__people" id="suggestedPeople"></div>
+    </div>
+    <div class="widget">
+      <div class="widget__title">קבוצות מומלצות</div>
+      <div class="widget__groups" id="suggestedGroups"></div>
+    </div>
+    <div class="widget widget--ad">
+      <div class="widget__ad-label">ממומן</div>
+      <div class="widget__ad-content">
+        <strong>FRE Electro Market</strong>
+        <p>ציוד מחשוב לעסקים במחירים משתלמים</p>
+        <button class="btn btn--outline btn--sm" onclick="openLeadModal()">קבלו הצעת מחיר</button>
+      </div>
+    </div>
+    <div class="widget__footer">
+      <a href="#">פרטיות</a> · <a href="#">תנאים</a> · <a href="#">פרסום</a> · <a href="#">עוגיות</a>
+      <p>© 2025 FakeBook</p>
+    </div>
+  </aside>
+</div>
+
+<!-- LEAD MODAL -->
+<div class="modal-overlay" id="leadModalOverlay" role="dialog" aria-modal="true" aria-label="קבלו הצעת מחיר">
+  <div class="modal" id="leadModal">
+    <div class="modal__header">
+      <div class="modal__brand">
+        <div class="modal__brand-icon">FRE</div>
+        <div>
+          <div class="modal__brand-name">FRE Electro Market</div>
+          <div class="modal__brand-sub">ממומן · טופס יצירת קשר</div>
+        </div>
+      </div>
+      <button class="modal__close" onclick="closeLeadModal()" aria-label="סגור">&times;</button>
+    </div>
+    <div class="modal__intro">
+      <h3>קבלו הצעת מחיר מותאמת</h3>
+      <p>מלאו את הפרטים ונחזור אליכם תוך 24 שעות עם הצעה אישית</p>
+    </div>
+    <form class="modal__form" id="leadForm" novalidate>
+      <div class="form-group">
+        <label for="company">שם החברה *</label>
+        <input type="text" id="company" name="company" placeholder="לדוגמה: טכנולוגיות ABC" autocomplete="organization" />
+        <span class="form-error" id="err-company"></span>
+      </div>
+      <div class="form-group">
+        <label for="name">שם מלא *</label>
+        <input type="text" id="name" name="name" placeholder="שם פרטי ושם משפחה" autocomplete="name" />
+        <span class="form-error" id="err-name"></span>
+      </div>
+      <div class="form-group">
+        <label for="phone">מספר טלפון *</label>
+        <input type="tel" id="phone" name="phone" placeholder="05X-XXXXXXX" autocomplete="tel" dir="ltr" />
+        <span class="form-error" id="err-phone"></span>
+      </div>
+      <div class="form-group">
+        <label for="email">כתובת אימייל</label>
+        <input type="email" id="email" name="email" placeholder="your@company.com" autocomplete="email" dir="ltr" />
+        <span class="form-error" id="err-email"></span>
+      </div>
+      <div class="form-group">
+        <label for="quantity">כמות מחשבים נדרשת</label>
+        <select id="quantity" name="quantity">
+          <option value="1-10">1–10 מחשבים</option>
+          <option value="10-25">10–25 מחשבים</option>
+          <option value="25-50">25–50 מחשבים</option>
+          <option value="50-100">50–100 מחשבים</option>
+          <option value="100+">מעל 100 מחשבים</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="notes">הערות נוספות</label>
+        <textarea id="notes" name="notes" rows="3" placeholder="דגשים, צרכים מיוחדים, תקציב..."></textarea>
+      </div>
+      <div class="form-group form-group--checkbox">
+        <label class="checkbox-label">
+          <input type="checkbox" id="consent" name="consent" />
+          <span class="checkmark"></span>
+          <span>אני מאשר יצירת קשר מ-FRE Electro Market לצורך קבלת הצעת מחיר *</span>
+        </label>
+        <span class="form-error" id="err-consent"></span>
+      </div>
+      <div class="modal__actions">
+        <button type="button" class="btn btn--ghost" onclick="closeLeadModal()">בטל</button>
+        <button type="submit" class="btn btn--primary" id="submitBtn">שלח</button>
+      </div>
+    </form>
+    <div class="modal__success" id="leadSuccess" style="display:none">
+      <div class="success-icon">✓</div>
+      <h3>תודה! קיבלנו את פנייתך</h3>
+      <p>נציג מ-FRE Electro Market יחזור אליך תוך 24 שעות</p>
+      <button class="btn btn--primary" onclick="closeLeadModal()">סגור</button>
+    </div>
+  </div>
+</div>
+
+<!-- FLOATING ACTION BUTTON (mobile) -->
+<button class="fab" id="fab" onclick="openLeadModal()" aria-label="קבלו הצעת מחיר">
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+</button>
+
+<script src="app.js"></script>
+</body>
+</html>
